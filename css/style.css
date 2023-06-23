@@ -1,0 +1,92 @@
+/* 结构与样式相分离 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.board {
+    position: relative;
+    width: 480px;
+    height: 540px;
+    margin: 30px auto;
+    background-color: #eed0a1;
+}
+
+.board div {
+    position: absolute;
+}
+
+.board .cell {
+    /* 暂不考虑1+1=2的问题 */
+    border: 1px solid #000;
+}
+
+.board .river {
+    top: 240px;
+}
+
+.board .river,
+.board .cell {
+    background-color: #eed0a1;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+/* CSS部分最后再整理,现在先写在这里 */
+.piece,
+.bar .redo,
+.bar .next {
+    /* 棋子不能太大了,避免臃肿 */
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 24px;
+    border: 1px solid #000;
+    background-color: #b7da48;
+}
+
+.piece:hover,
+.bar .redo:hover,
+.bar .next:hover {
+    background-color: aqua;
+}
+
+.bar {
+    top: -18px;
+    left: -100px;
+}
+
+.bar .redo,
+.bar .next {
+    color: brown;
+}
+
+.bar .redo:hover,
+.bar .next:hover {
+    color: darkmagenta;
+}
+
+.bar .redo {
+    top: 0;
+    left: 0;
+}
+
+.bar .next {
+    /* 这个距离刚刚好 */
+    top: 60px;
+    left: 0;
+}
+
+.available {
+    background-color: #b7da48;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
